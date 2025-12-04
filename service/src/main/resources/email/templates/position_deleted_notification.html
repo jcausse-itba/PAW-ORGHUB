@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Posición eliminada</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">Posición eliminada</h1>
+    <div style="margin: 20px 0;">
+        <p>Lamentamos informarte que la posición para la que te postulaste en <strong><span th:text="${organizationName}"/></strong> ha sido eliminada:</p>
+        <div style="background-color: #fee2e2; padding: 20px; border-left: 4px solid #dc3545; margin: 15px 0; border-radius: 5px;">
+            <h3 style="color: #2c3e50; margin-top: 0;">📋 <span th:text="${positionTitle}"/></h3>
+            <p style="margin: 10px 0;"><strong>Estado de tu postulación:</strong> 
+                <span th:if="${applicationStatus == 'ACCEPTED'}" style="color: #dc3545; font-weight: bold;">✅ Aceptada</span>
+                <span th:if="${applicationStatus == 'REJECTED'}" style="color: #6c757d; font-weight: bold;">❌ Rechazada</span>
+                <span th:if="${applicationStatus == 'PENDING'}" style="color: #ffc107; font-weight: bold;">⏳ Pendiente</span>
+            </p>
+        </div>
+        <div style="margin: 20px 0;">
+            <p th:if="${applicationStatus == 'ACCEPTED'}" style="color: #dc3545; font-weight: bold;">
+                ⚠️ Tu postulación había sido aceptada, pero la posición ha sido eliminada. Te recomendamos contactar a la organización para más información.
+            </p>
+            <p th:if="${applicationStatus == 'PENDING'}">
+                Tu postulación ha sido cancelada debido a la eliminación de esta posición. Si estás interesado en otras oportunidades, te invitamos a explorar otras posiciones abiertas.
+            </p>
+            <p th:if="${applicationStatus == 'REJECTED'}">
+                La organización ha eliminado esta posición. Aunque tu postulación había sido rechazada previamente, queríamos mantenerte informado.
+            </p>
+        </div>
+    </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a th:href="${orgProfileUrl}"
+           style="display: inline-block; padding: 12px 24px; background-color: #dc3545; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Ver perfil de la organización
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <p>Si tienes preguntas, no dudes en contactar a la organización.</p>
+        <p>Saludos!</p>
+    </div>
+</div>
+</body>
+</html>
+

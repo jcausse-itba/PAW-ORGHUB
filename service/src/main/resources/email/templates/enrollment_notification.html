@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva inscripción</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">¡Nueva inscripción!</h1>
+    <div style="margin: 20px 0;">
+        <p>Tu organización <strong><span th:text="${organizationName}"/></strong> ha recibido una nueva inscripción:</p>
+        <div style="background-color: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin: 15px 0; border-radius: 5px;">
+            <h3 style="color: #2c3e50; margin-top: 0;">🎉 <span th:text="${eventTitle}"/></h3>
+            <p style="margin: 10px 0;"><strong>👤 Participante:</strong> <span th:text="${applicantName}"/></p>
+        </div>
+        <p>¡Revisa la inscripción y gestiona los participantes desde el panel de administración!</p>
+    </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a th:href="${manageUrl}"
+           style="display: inline-block; padding: 12px 24px; background-color: #ffc107; color: #212529; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Gestionar inscripciones
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <p>Saludos!</p>
+    </div>
+</div>
+</body>
+</html>

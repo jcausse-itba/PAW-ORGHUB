@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva suscripción</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">¡Nueva suscripción!</h1>
+    <div style="margin: 20px 0;">
+        <p>Tu organización "<span th:text="${organizationName}"/>" ha recibido un nuevo suscriptor:</p>
+        <div style="background-color: #f4f4f4; padding: 15px; border-left: 4px solid #60a5fa; margin: 15px 0;">
+            <p style="font-style: italic;" th:text="${userEmail}"/>
+        </div>
+        <p>¡Ingresa a la plataforma para ver más detalles!</p>
+    </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a th:href="${organizationUrl}"
+           style="display: inline-block; padding: 12px 24px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Ver mi organización
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <p>Saludos!</p>
+    </div>
+</div>
+</body>
+</html>

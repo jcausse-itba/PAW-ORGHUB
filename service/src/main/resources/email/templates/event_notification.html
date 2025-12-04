@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo evento</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">¡Nuevo evento!</h1>
+    <div style="margin: 20px 0;">
+        <p><strong><span th:text="${organizationName}"/></strong> ha organizado un nuevo evento:</p>
+        <div style="background-color: #fffbeb; padding: 20px; border-left: 4px solid #f59e0b; margin: 15px 0; border-radius: 5px;">
+            <h3 style="color: #2c3e50; margin-top: 0;" th:text="${eventTitle}"/>
+            <p style="margin: 10px 0;"><strong>📍 Ubicación:</strong> <span th:text="${eventLocation}"/></p>
+            <p style="margin-bottom: 0;" th:text="${eventDescription}"/>
+        </div>
+        <p>¡No te pierdas este evento de una organización a la que te encuentras suscrito!</p>
+    </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a th:href="${eventUrl}"
+           style="display: inline-block; padding: 12px 24px; background-color: #f59e0b; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Ver detalles del evento
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <p>Saludos!</p>
+    </div>
+</div>
+</body>
+</html>

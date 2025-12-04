@@ -1,0 +1,7 @@
+package ar.edu.itba.paw.interfaces.persistence;
+
+public class InvalidStateException extends RuntimeException {
+    public InvalidStateException(String message) {
+        super(message);
+    }
+}

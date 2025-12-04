@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Recordatorio de evento</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">Recordatorio de evento</h1>
+    <div style="margin: 20px 0;">
+        <p>Hola,</p>
+        <p>Te recordamos que estás inscrito al evento <strong><span th:text="${eventTitle}"/></strong> de <strong><span th:text="${organizationName}"/></strong>.</p>
+        <div style="background-color: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin: 15px 0; border-radius: 5px;">
+            <h3 style="color: #2c3e50; margin-top: 0;">📅 Información del evento:</h3>
+            <p style="margin: 10px 0;"><strong>Fecha y hora:</strong> <span th:text="${#temporals.format(eventDate, 'dd/MM/yyyy HH:mm')}"/></p>
+            <p style="margin: 10px 0;"><strong>📍 Ubicación:</strong> <span th:text="${eventLocation}"/></p>
+        </div>
+        <p>¡No olvides asistir! Esperamos verte allí.</p>
+    </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a th:href="${eventUrl}"
+           style="display: inline-block; padding: 12px 24px; background-color: #ffc107; color: #333; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Ver detalles del evento
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <p>Saludos!</p>
+    </div>
+</div>
+</body>
+</html>
+

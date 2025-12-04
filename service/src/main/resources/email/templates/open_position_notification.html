@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva posición abierta</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">¡Nueva posición abierta!</h1>
+    <div style="margin: 20px 0;">
+        <p><strong><span th:text="${organizationName}"/></strong> ha publicado una nueva posición abierta:</p>
+        <div style="background-color: #eff6ff; padding: 20px; border-left: 4px solid #3b82f6; margin: 15px 0; border-radius: 5px;">
+            <h3 style="color: #2c3e50; margin-top: 0;" th:text="${positionTitle}"/>
+            <p style="margin-bottom: 0;" th:text="${positionDescription}"/>
+        </div>
+        <p>¡Esta podría ser tu oportunidad! Una organización a la que te encuentras suscrito está buscando talento.</p>
+    </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a th:href="${positionUrl}"
+           style="display: inline-block; padding: 12px 24px; background-color: #3b82f6; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Ver posición completa
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <p>Saludos!</p>
+    </div>
+</div>
+</body>
+</html>

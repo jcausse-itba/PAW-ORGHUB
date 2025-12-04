@@ -1,0 +1,68 @@
+/* ===== Main CSS Import File ===== */
+/* This file imports all component-specific CSS files */
+
+/* Import component styles */
+@import url('components.css');
+@import url('header.css');
+@import url('footer.css');
+@import url('views.css');
+
+/* ===== Global Styles ===== */
+/* These styles apply to the entire application */
+
+html, body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ===== Utility Classes ===== */
+.container {
+    width: 90%;
+    margin: 40px auto 40px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.hr {
+    height: 1px;
+    background: #eef2ff;
+    margin: 8px 0 20px;
+    border-radius: 1px;
+}
+
+/* ===== Responsive Container ===== */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (max-width: 992px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 540px;
+        margin: 20px auto 40px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        max-width: 100%;
+        margin: 15px auto 30px;
+        padding: 0 10px;
+    }
+}

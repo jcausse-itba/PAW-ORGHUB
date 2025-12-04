@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nuevo rol asignado</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">¡Nuevo rol asignado!</h1>
+    <div style="margin: 20px 0;">
+        <p th:if="${isManager}">Has sido agregado como <strong>administrador</strong> de "<span th:text="${organizationName}"/>".</p>
+        <p th:unless="${isManager}">Has sido agregado como <strong>miembro</strong> de "<span th:text="${organizationName}"/>".</p>
+        <p>¡Ahora puedes acceder a las funciones correspondientes a tu nuevo rol en la plataforma!</p>
+    </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a th:href="${organizationUrl}"
+           style="display: inline-block; padding: 12px 24px; background-color: #3498db; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Ver organización
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <p>Saludos, el Equipo de OrgHub.</p>
+    </div>
+</div>
+</body>
+</html>

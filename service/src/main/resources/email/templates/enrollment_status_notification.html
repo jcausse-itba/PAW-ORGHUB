@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualización de inscripción</title>
+</head>
+<body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+<div style="max-width: 600px; margin: 0 auto; padding: 20px;">
+    <h1 style="color: #2c3e50;">Actualización de tu inscripción</h1>
+    <div style="margin: 20px 0;">
+        <p>Tu inscripción al evento de <strong><span th:text="${organizationName}"/></strong> ha sido actualizada:</p>
+        <div style="background-color: #fff3cd; padding: 20px; border-left: 4px solid #ffc107; margin: 15px 0; border-radius: 5px;">
+            <h3 style="color: #2c3e50; margin-top: 0;">🎉 <span th:text="${eventTitle}"/></h3>
+            <p style="margin: 10px 0;"><strong>Estado:</strong> 
+                <span th:if="${status == 'ACCEPTED'}" style="color: #28a745; font-weight: bold;">✅ Aceptada</span>
+                <span th:if="${status == 'REJECTED'}" style="color: #dc3545; font-weight: bold;">❌ Rechazada</span>
+                <span th:if="${status == 'PENDING'}" style="color: #ffc107; font-weight: bold;">⏳ Pendiente</span>
+            </p>
+        </div>
+        <p th:if="${status == 'ACCEPTED'}">¡Felicitaciones! Tu inscripción ha sido aceptada. ¡Nos vemos en el evento!</p>
+        <p th:if="${status == 'REJECTED'}">Lamentamos informarte que tu inscripción no ha sido confirmada para este evento.</p>
+        <p th:if="${status == 'PENDING'}">Tu inscripción está siendo revisada. Te mantendremos informado sobre cualquier actualización.</p>
+    </div>
+    <div style="text-align: center; margin: 40px 0;">
+        <a th:href="${eventUrl}"
+           style="display: inline-block; padding: 12px 24px; background-color: #ffc107; color: #212529; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Ver evento
+        </a>
+    </div>
+    <div style="margin-top: 30px;">
+        <p>Saludos!</p>
+    </div>
+</div>
+</body>
+</html>
